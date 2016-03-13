@@ -1,7 +1,7 @@
-** To install **
+**To install**
 
 npm install
 
-** To run **
+**To run**
 
 sudo nw .
