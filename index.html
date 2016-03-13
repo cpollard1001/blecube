@@ -9,6 +9,7 @@
             margin: 0px;
             background-color: #000000;
             overflow: hidden;
+            background-color: #707070;
           }
         </style>
     </head>
@@ -51,6 +52,7 @@
         renderer = new THREE.WebGLRenderer();
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.setClearColor( 0x707070 );
         document.body.appendChild( renderer.domElement );
 
         controls = new THREE.OrbitControls( camera, renderer.domElement );
@@ -87,9 +89,7 @@
     var Parser = require('binary-parser').Parser;
 
     var parser = new Parser().floatle('q1').floatle('q2').floatle('q3').floatle('q4');
-    // Display Cube
-    // Create button for recalibrating + resetting quaternion
-    // Send data a bit faster
+
     var send = function(){};
 
     nrfuart.discoverAll(function(ble_uart) {
@@ -107,7 +107,6 @@
                 });
             }
      
-            var count = 0;
             ble_uart.readDeviceName(function(devName) {
                 console.log('Device name:', devName);
             });
@@ -119,8 +118,6 @@
                     mesh.quaternion.set(obj.q2, obj.q3,obj.q4,obj.q1);   
                 }
             });
-     
-            //setTimeout(send, 3000);
         });
     });
     </script>
