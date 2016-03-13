@@ -1,0 +1,26 @@
+{
+  "main": "index.html",
+  "name": "BLE Cube",
+  "description": "Visualize IMU readings with three.js",
+  "version": "0.1.0",
+  "keywords": [
+    "3d",
+    "BLE",
+    "IMU"
+  ],
+  "author": "Chris Pollard",
+  "window": {
+    "title": "Atlantia Editor",
+    "icon": "logo.png",
+    "toolbar": true,
+    "width": 1600,
+    "height": 800,
+    "min_width": 800,
+    "min_height": 600
+  },
+  "chromium-args": "--child-clean-exit --enable-webgl --ignore-gpu-blacklist --disable-pinch",
+  "dependencies": {
+    "binary-parser": "^1.1.5",
+    "nrfuart": "0.0.4"
+  }
+}
